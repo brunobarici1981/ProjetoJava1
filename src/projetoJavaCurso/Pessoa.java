@@ -4,7 +4,23 @@ import java.util.Date;
 
 public class Pessoa {
 
-	private String nome,sobrenome,endereco;
+	private String nome,sobrenome,endereco,cpf;
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	private int idade;
 	private Date dataNascimento;
 	
