@@ -4,9 +4,10 @@ import java.util.Date;
 
 public class Pessoa {
 
-	private String nome,sobrenome;
+	private String nome,sobrenome,endereco;
 	private int idade;
 	private Date dataNascimento;
+	
 
 	public Date getDataNascimento() {
 		return dataNascimento;
