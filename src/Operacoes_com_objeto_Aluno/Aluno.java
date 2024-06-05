@@ -119,11 +119,13 @@ public class Aluno{
 		 notas[i] = sc.nextDouble();
 		 
 		}
-		if(mediaAluno(notas[0],notas[1],notas[2]) > 7) {
+		/*if(mediaAluno(notas[0],notas[1],notas[2]) > 7) {
            System.out.println("Aluno aprovado");			
 		}else {
 			System.out.println("Aluno reprovado");
-		}
+		}*/
+		
+		System.out.println((mediaAluno(notas[0],notas[1],notas[2]) > 7 )?  "aprovado" : "reprovado"); 
 	}
 @Override
 	public String toString() {
