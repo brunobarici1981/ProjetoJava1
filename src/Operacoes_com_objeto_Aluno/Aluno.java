@@ -1,19 +1,21 @@
 package Operacoes_com_objeto_Aluno;
+
+import java.util.Objects;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
 import projetoJavaCurso.Pessoa;
 
-public class Aluno{
-     
+public class Aluno {
+
 	Scanner sc = new Scanner(System.in);
 	private String nome, registroGeral, numeroCpf, nomeMae, nomePai, dataNascimento, dataMatricula, nomeEscola,
 			serieMatriculado;
 	int idade;
-	
+
 	public Aluno() {
-		
+
 	}
 
 	public String getNome() {
@@ -95,8 +97,7 @@ public class Aluno{
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	
-	
+
 	public Aluno(String nome, String registroGeral, String numeroCpf, String nomeMae, String nomePai,
 			String dataNascimento, String dataMatricula, String nomeEscola, String serieMatriculado, int idade) {
 		setNome(nome);
@@ -110,28 +111,41 @@ public class Aluno{
 		setSerieMatriculado(serieMatriculado);
 		setIdade(idade);
 	}
-	public double mediaAluno(double nota1,double nota2,double nota3) {
-	 return (nota1+nota2+nota3)/3;	
+
+	public double mediaAluno(double nota1, double nota2, double nota3) {
+		return (nota1 + nota2 + nota3) / 3;
 	}
+
 	public void reprovadoAprovado() {
-		double notas[]= {0,0,0};
-		int j=1;
-		for(int i=0; i< notas.length; i++) {
+		double notas[] = { 0, 0, 0 };
+		int j = 1;
+		for (int i = 0; i < notas.length; i++) {
 
-		String num = JOptionPane.showInputDialog("Digite a "+ j++ +"° nota");
-		 notas[i] = Double.parseDouble(num);
+			String num = JOptionPane.showInputDialog("Digite a " + j++ + "° nota");
+			notas[i] = Double.parseDouble(num);
 		}
-		/*if(mediaAluno(notas[0],notas[1],notas[2]) > 7) {
-           System.out.println("Aluno aprovado");			
-		}else {
-			System.out.println("Aluno reprovado");
-		}*/
-		
-		JOptionPane.showMessageDialog(null, ((mediaAluno(notas[0],notas[1],notas[2]) > 7 )?  "aprovado" : "reprovado"));
+		/*
+		 * if(mediaAluno(notas[0],notas[1],notas[2]) > 7) {
+		 * System.out.println("Aluno aprovado"); }else {
+		 * System.out.println("Aluno reprovado"); }
+		 */
+
+		JOptionPane.showMessageDialog(null,
+				((mediaAluno(notas[0], notas[1], notas[2]) > 7) ? "aprovado" : "reprovado"));
 	}
 
+	public void comparaAlunos(Aluno aluno1, Aluno aluno2) {
 
-@Override
+
+		if (aluno1.equals(aluno2)) {
+			JOptionPane.showMessageDialog(null, "Iguais");
+		} else {
+			JOptionPane.showMessageDialog(null, "Diferentes");
+		}
+
+	}
+
+	@Override
 	public String toString() {
 		return "Aluno \nnome=" + nome + "\nregistroGeral=" + registroGeral + "\nnumeroCpf=" + numeroCpf + "\nnomeMae="
 				+ nomeMae + "\nnomePai=" + nomePai + "\ndataNascimento=" + dataNascimento + "\ndataMatricula="
@@ -139,13 +153,33 @@ public class Aluno{
 				+ idade;
 	}
 
-
-public static void main(String[] args) {
-	  
-		Aluno bruno = new Aluno();
-		bruno.reprovadoAprovado();
+	public static void main(String[] args) {
+		
+		Aluno aluno1 = new Aluno();
+		aluno1.setNumeroCpf("311258");
+		
+		Aluno aluno2 = new Aluno();
+		aluno2.setNumeroCpf("31125");
+		
+		Aluno aluno3 = new Aluno();
+	    aluno3.comparaAlunos(aluno1, aluno2);
+	
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(numeroCpf);
+	}
 
-
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(numeroCpf, other.numeroCpf);
+	}
 }
