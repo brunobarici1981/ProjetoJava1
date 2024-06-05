@@ -1,5 +1,5 @@
 package projetoJavaCurso;
-
+//exercicio busca numero em vetor
 public class HelloWorld {
 
 	public void encontrarNumeroNoVetor(int num) {
