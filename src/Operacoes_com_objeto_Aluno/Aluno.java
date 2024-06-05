@@ -1,6 +1,8 @@
 package Operacoes_com_objeto_Aluno;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import projetoJavaCurso.Pessoa;
 
 public class Aluno{
@@ -83,7 +85,7 @@ public class Aluno{
 	}
 
 	public void setSerieMatriculado(String serieMatriculado) {
-		serieMatriculado = serieMatriculado;
+		this.serieMatriculado = serieMatriculado;
 	}
 
 	public int getIdade() {
@@ -113,11 +115,11 @@ public class Aluno{
 	}
 	public void reprovadoAprovado() {
 		double notas[]= {0,0,0};
-		
-		for(int i=0; i<3; i++) {
-		System.out.println("Entre com a nota numero"+i);
-		 notas[i] = sc.nextDouble();
-		 
+		int j=1;
+		for(int i=0; i< notas.length; i++) {
+
+		String num = JOptionPane.showInputDialog("Digite a "+ j++ +"° nota");
+		 notas[i] = Double.parseDouble(num);
 		}
 		/*if(mediaAluno(notas[0],notas[1],notas[2]) > 7) {
            System.out.println("Aluno aprovado");			
@@ -125,8 +127,10 @@ public class Aluno{
 			System.out.println("Aluno reprovado");
 		}*/
 		
-		System.out.println((mediaAluno(notas[0],notas[1],notas[2]) > 7 )?  "aprovado" : "reprovado"); 
+		JOptionPane.showMessageDialog(null, ((mediaAluno(notas[0],notas[1],notas[2]) > 7 )?  "aprovado" : "reprovado"));
 	}
+
+
 @Override
 	public String toString() {
 		return "Aluno \nnome=" + nome + "\nregistroGeral=" + registroGeral + "\nnumeroCpf=" + numeroCpf + "\nnomeMae="
