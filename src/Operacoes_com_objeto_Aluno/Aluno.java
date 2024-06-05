@@ -1,15 +1,12 @@
 package Operacoes_com_objeto_Aluno;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import projetoJavaCurso.Pessoa;
 
 public class Aluno {
 
-	Scanner sc = new Scanner(System.in);
 	private String nome, registroGeral, numeroCpf, nomeMae, nomePai, dataNascimento, dataMatricula, nomeEscola,
 			serieMatriculado;
 	int idade;
@@ -147,15 +144,15 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Aluno \nnome=" + nome + "\nregistroGeral=" + registroGeral + "\nnumeroCpf=" + numeroCpf + "\nnomeMae="
-				+ nomeMae + "\nnomePai=" + nomePai + "\ndataNascimento=" + dataNascimento + "\ndataMatricula="
-				+ dataMatricula + "\nnomeEscola=" + nomeEscola + "\nSerieMatriculado=" + serieMatriculado + "\nidade="
-				+ idade;
+		return "Aluno [nome=" + getNome() + ", RegistroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae="
+				+ nomeMae + ", nomePai=" + nomePai + ", dataNascimento=" + dataNascimento + ", dataMatricula="
+				+ dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", idade="
+				+ idade + "]";
 	}
 
 	public static void main(String[] args) {
 		
-		Aluno aluno1 = new Aluno();
+		/*Aluno aluno1 = new Aluno();
 		aluno1.setNumeroCpf("311258");
 		
 		Aluno aluno2 = new Aluno();
@@ -163,6 +160,9 @@ public class Aluno {
 		
 		Aluno aluno3 = new Aluno();
 	    aluno3.comparaAlunos(aluno1, aluno2);
+	    */
+		
+	  
 	
 	}
 
