@@ -1,8 +1,11 @@
 package Operacoes_com_objeto_Aluno;
+import java.util.Scanner;
+
 import projetoJavaCurso.Pessoa;
 
 public class Aluno{
-
+     
+	Scanner sc = new Scanner(System.in);
 	private String nome, registroGeral, numeroCpf, nomeMae, nomePai, dataNascimento, dataMatricula, nomeEscola,
 			serieMatriculado;
 	int idade;
@@ -105,7 +108,23 @@ public class Aluno{
 		setSerieMatriculado(serieMatriculado);
 		setIdade(idade);
 	}
-	
+	public double mediaAluno(double nota1,double nota2,double nota3) {
+	 return (nota1+nota2+nota3)/3;	
+	}
+	public void reprovadoAprovado() {
+		double notas[]= {0,0,0};
+		
+		for(int i=0; i<3; i++) {
+		System.out.println("Entre com a nota numero"+i);
+		 notas[i] = sc.nextDouble();
+		 
+		}
+		if(mediaAluno(notas[0],notas[1],notas[2]) > 7) {
+           System.out.println("Aluno aprovado");			
+		}else {
+			System.out.println("Aluno reprovado");
+		}
+	}
 @Override
 	public String toString() {
 		return "Aluno \nnome=" + nome + "\nregistroGeral=" + registroGeral + "\nnumeroCpf=" + numeroCpf + "\nnomeMae="
@@ -117,7 +136,8 @@ public class Aluno{
 
 public static void main(String[] args) {
 	  
-		
+		Aluno bruno = new Aluno();
+		bruno.reprovadoAprovado();
 	}
 
 
