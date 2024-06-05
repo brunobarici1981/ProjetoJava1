@@ -1,10 +1,13 @@
 package projetoJavaCurso;
 
+import Operacoes_com_objeto_Aluno.Aluno;
+
 import java.util.Date;
 
-public class Pessoa {
+public class Pessoa extends Aluno {
 
-	private String nome,sobrenome,endereco,cpf;
+	private String nome, sobrenome, endereco, cpf;
+
 	public String getEndereco() {
 		return endereco;
 	}
@@ -22,14 +25,13 @@ public class Pessoa {
 	}
 
 	private int idade;
-	private Date dataNascimento;
-	
+	private String dataNascimento;
 
-	public Date getDataNascimento() {
-		return dataNascimento;
+	public String getDataNascimento() {
+		return  dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -56,5 +58,11 @@ public class Pessoa {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	
+
+	public static void main(String[] args) {
+		Aluno aluno = new Aluno("Bruno", "43899030", "3112245", "sonia", "alvaro", "09/10/1981", "06/06/2024",
+				"Mario Reis", "3°", 1);
+		System.out.println(aluno.toString());
+	}
+
 }
