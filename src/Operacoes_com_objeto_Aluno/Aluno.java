@@ -1,15 +1,18 @@
 package Operacoes_com_objeto_Aluno;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.swing.JOptionPane;
-
 
 public class Aluno {
 
 	private String nome, registroGeral, numeroCpf, nomeMae, nomePai, dataNascimento, dataMatricula, nomeEscola,
 			serieMatriculado;
-	int idade;
+	private int idade;
+	private List notas;
+	private List diciplina;
 
 	public Aluno() {
 
@@ -109,30 +112,23 @@ public class Aluno {
 		setIdade(idade);
 	}
 
-	public double mediaAluno(double nota1, double nota2, double nota3) {
-		return (nota1 + nota2 + nota3) / 3;
+	public List getNotas() {
+		return notas;
 	}
 
-	public void reprovadoAprovado() {
-		double notas[] = { 0, 0, 0 };
-		int j = 1;
-		for (int i = 0; i < notas.length; i++) {
+	public void setNotas(List notas) {
+		this.notas = notas;
+	}
 
-			String num = JOptionPane.showInputDialog("Digite a " + j++ + "° nota");
-			notas[i] = Double.parseDouble(num);
-		}
-		/*
-		 * if(mediaAluno(notas[0],notas[1],notas[2]) > 7) {
-		 * System.out.println("Aluno aprovado"); }else {
-		 * System.out.println("Aluno reprovado"); }
-		 */
+	public List getDiciplina() {
+		return diciplina;
+	}
 
-		JOptionPane.showMessageDialog(null,
-				((mediaAluno(notas[0], notas[1], notas[2]) > 7) ? "aprovado" : "reprovado"));
+	public void setDiciplina(List diciplina) {
+		this.diciplina = diciplina;
 	}
 
 	public void comparaAlunos(Aluno aluno1, Aluno aluno2) {
-
 
 		if (aluno1.equals(aluno2)) {
 			JOptionPane.showMessageDialog(null, "Iguais");
@@ -142,28 +138,23 @@ public class Aluno {
 
 	}
 
-	@Override
 	public String toString() {
-		return "Aluno [nome=" + getNome() + ", RegistroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae="
-				+ nomeMae + ", nomePai=" + nomePai + ", dataNascimento=" + dataNascimento + ", dataMatricula="
-				+ dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", idade="
-				+ idade + "]";
+		return "Aluno [nome=" + getNome() + ", RegistroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf
+				+ ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataNascimento=" + dataNascimento
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", idade=" + idade + "]";
 	}
 
 	public static void main(String[] args) {
-		
-		/*Aluno aluno1 = new Aluno();
-		aluno1.setNumeroCpf("311258");
-		
-		Aluno aluno2 = new Aluno();
-		aluno2.setNumeroCpf("31125");
-		
-		Aluno aluno3 = new Aluno();
-	    aluno3.comparaAlunos(aluno1, aluno2);
-	    */
-		
-	  
-	
+
+		/*
+		 * Aluno aluno1 = new Aluno(); aluno1.setNumeroCpf("311258");
+		 * 
+		 * Aluno aluno2 = new Aluno(); aluno2.setNumeroCpf("31125");
+		 * 
+		 * Aluno aluno3 = new Aluno(); aluno3.comparaAlunos(aluno1, aluno2);
+		 */
+
 	}
 
 	@Override
